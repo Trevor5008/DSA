@@ -8,9 +8,8 @@ class MinHeap {
         if (this.size === 0) { // heap is empty
             return null;
         }
-        const min = this.heap[1];
-        this.heap[1] = this.heap[this.size];
-        this.heap.pop(); // remove last element which is now the minimum
+        this.swap(1, this.size);
+        const min = this.heap.pop(); // after the swap, last element is min
         this.size--;
         this.heapify();
         return min;
